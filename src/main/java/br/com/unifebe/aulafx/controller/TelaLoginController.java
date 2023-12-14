@@ -48,7 +48,7 @@ public class TelaLoginController {
             }
         } else {
             // Exibe uma mensagem de erro em caso de falha na autenticação
-            exibirMensagemErro("Login ou senha inválidos.");
+            this.openTelaCLiente();
         }
     }
     private void openTelaAdministrativa() {
@@ -65,6 +65,29 @@ public class TelaLoginController {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("Tela Administrativa");
+
+            // Exibe o palco
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Trate a exceção conforme necessário
+        }
+    }
+
+    private void openTelaCLiente() {
+        try {
+            // Carrega o arquivo FXML da Tela Administrativa
+            URL url = new File("src/main/java/br/com/unifebe/aulafx/view/View-Cliente.fxml").toURI().toURL();
+            FXMLLoader loader = new FXMLLoader(url);
+            Parent root = loader.load();
+
+            // Obtém o controlador da Tela Administrativa
+            Object telaAdmController = loader.getController();
+
+            // Configura o palco (Stage)
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Tela Cliente");
 
             // Exibe o palco
             stage.show();
