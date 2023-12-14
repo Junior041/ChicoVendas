@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="869.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.unifebe.aulafx.controller.TelaClienteController">
+    <Pane prefHeight="74.0" prefWidth="869.0">
+        <Button fx:id="btnBuscarProduto" layoutX="26.0" layoutY="23.0" mnemonicParsing="false" text="Buscar" textFill="#1f1197" />
+        <Button fx:id="btnRetirar" layoutX="260.0" layoutY="23.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="79.0" text="Retirar" textFill="RED" />
+        <Button fx:id="btnAdicionarCarrinho" layoutX="103.0" layoutY="23.0" mnemonicParsing="false" text="Adicionar ao Carrinho" textFill="#402f2f" />
+      <Button fx:id="btnComprar" layoutX="372.0" layoutY="23.0" mnemonicParsing="false" text="Comprar" textFill="#20b227" />
+        <Label layoutX="538.0" layoutY="27.0" prefHeight="17.0" prefWidth="62.0" text="Carrinho:" />
+    </Pane>
+    <Pane layoutX="7.0" layoutY="108.0" prefHeight="130.0" prefWidth="849.0">
+        <Label layoutY="5.0" prefHeight="17.0" prefWidth="0.0" />
+        <TextField fx:id="txtBuscarProduto" layoutX="94.0" layoutY="53.0" prefHeight="25.0" prefWidth="224.0" />
+        <Label layoutX="4.0" layoutY="57.0" text="Buscar Produto" />
+      <TableView layoutX="599.0" layoutY="-86.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="colProdutoCarrinho" prefWidth="103.0" text="Produto" />
+          <TableColumn fx:id="colQuantidadeCarrinho" prefWidth="96.0" text="Quantidade" />
+        </columns>
+      </TableView>
+    </Pane>
+    <ScrollPane layoutX="-3.0" layoutY="232.0" prefHeight="299.0" prefWidth="869.0">
+
+        <TableView fx:id="tabela" prefHeight="294.0" prefWidth="850.0">
+            <columns>
+                <TableColumn fx:id="colProdutoBusca" prefWidth="345.0" text="Produto" />
+                <TableColumn fx:id="colQuantidade" minWidth="0.0" prefWidth="171.0" text="Quantiade" />
+            <TableColumn fx:id="colPrecoCliente" prefWidth="97.0" text="Preço" />
+            </columns>
+        </TableView>
+
+    </ScrollPane>
+</AnchorPane>
