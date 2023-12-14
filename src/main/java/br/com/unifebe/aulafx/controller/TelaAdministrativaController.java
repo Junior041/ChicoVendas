@@ -7,6 +7,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.util.List;
+import java.util.function.Predicate;
+
 public class TelaAdministrativaController {
 
     @FXML
@@ -67,11 +70,9 @@ public class TelaAdministrativaController {
     // Método para buscar produto
     @FXML
     public void buscarProduto() {
-        String nomeProduto = txtBuscarProduto.getText();
-
-        // Lógica para buscar produto
-        // Aqui você pode usar o nome do produto para realizar a busca
-        System.out.println("Buscando produto: " + nomeProduto);
+        String nomeProduto = txtBuscarProduto.getText().toUpperCase();
+        // limpa a tabela, busca os produtos no banco, chama o inserirNaTabela para cada um deles
+        // SELECT * FROM PRODUTOS LIKE "%{nomeProduto}%";
     }
 
     // Método para remover produto
