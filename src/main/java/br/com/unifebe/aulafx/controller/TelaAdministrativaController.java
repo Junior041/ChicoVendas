@@ -77,17 +77,26 @@ public class TelaAdministrativaController {
     // Método para remover produto
     @FXML
     public void removerProduto() {
-        // Lógica para remover produto
-        // Aqui você pode implementar a lógica de remoção do produto selecionado na tabela
+        //aagar no banco, caso de certo faça o codigo a baixo
+        tabela.getItems().remove(tabela.getSelectionModel().getSelectedIndex());
         System.out.println("Removendo produto");
     }
 
     // Método para atualizar produto
     @FXML
     public void atualizarProduto() {
-        // Lógica para atualizar produto
-        // Aqui você pode implementar a lógica de atualização do produto selecionado na tabela
-        System.out.println("Atualizando produto");
+        int index = tabela.getSelectionModel().getSelectedIndex();
+        if (index >= 0) {
+            //alterar no banco, caso de certo faça o código a baixo
+            Produto itemParaSerAlterado = listaProdutos.get(index);
+            itemParaSerAlterado.setNome(txtInserirProduto.getText());
+            itemParaSerAlterado.setPreco(Double.parseDouble(txtPreco.getText()));
+            itemParaSerAlterado.setQuantidade(Integer.parseInt(txtQuantidadeProduto.getText()));
+            tabela.refresh(); // Atualiza a exibição da tabela
+            System.out.println("Produto atualizado: " + itemParaSerAlterado.getNome());
+        } else {
+            System.out.println("Selecione um produto para atualizar.");
+        }
     }
 
 

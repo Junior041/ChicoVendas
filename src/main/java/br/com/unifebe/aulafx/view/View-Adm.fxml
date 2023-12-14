@@ -6,8 +6,8 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="869.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.unifebe.aulafx.controller.TelaAdministrativaController">
     <Pane prefHeight="74.0" prefWidth="869.0">
         <Button fx:id="btnCadastrarProduto" layoutX="26.0" layoutY="23.0" mnemonicParsing="false" onAction="#inserir" text="Inserir Produto" textFill="#006f1c" />
-        <Button fx:id="btnRemoverProduto" layoutX="239.0" layoutY="23.0" mnemonicParsing="false" text="Excluir" textFill="RED" />
-        <Button fx:id="btnAtualizarProduto" layoutX="158.0" layoutY="23.0" mnemonicParsing="false" text="Alterar" />
+        <Button fx:id="btnRemoverProduto" layoutX="239.0" layoutY="23.0" mnemonicParsing="false" onAction="#removerProduto" text="Excluir" textFill="RED" />
+        <Button fx:id="btnAtualizarProduto" layoutX="158.0" layoutY="23.0" mnemonicParsing="false" onAction="#atualizarProduto" text="Alterar" />
     </Pane>
     <Pane layoutX="10.0" layoutY="102.0" prefHeight="130.0" prefWidth="849.0">
         <Label layoutY="5.0" text="Nome Produto" />
